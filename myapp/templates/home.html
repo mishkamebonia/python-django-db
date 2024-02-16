@@ -8,10 +8,13 @@
   </head>
   <body>
     <h1>Home</h1>
-    <a href="/employees">employees</a>
+    <a href="{% url 'employees' %}">employees</a>
+    <!-- <a href="/employees">employees</a> -->
     <hr />
-    <a href="/stacks">stacks</a>
+    <a href="{% url 'stacks' %}">stacks</a>
+    <!-- <a href="/stacks">stacks</a> -->
     <hr />
-    <a href="/team-leads">team leads</a>
+    <a href="{% url 'team_leads' %}">team leads</a>
+    <!-- <a href="/team-leads">team leads</a> -->
   </body>
 </html>

@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Team Leads</title>
-  </head>
-  <body>
-    <h1>Team Leads</h1>
-    <ul>
-      {% for team_lead in team_leads %}
-      <li>
-        {{ team_lead.name }} {{ team_lead.surname }} - {{ team_lead.stack }}
-      </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% block content %}
+<h1>Team Leads</h1>
+{% for team_lead in team_leads %}
+<h3>{{ team_lead.name }}</h3>
+<ul>
+  {% for user in team_lead.users %}
+  <li>{{ user.name }} {{ user.surname }}</li>
+  {% endfor %}
+</ul>
+<hr />
+{% endfor %} {% endblock %}

@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Stacks</title>
-  </head>
-  <body>
-    <h1>Stacks</h1>
-    <ul>
-      {% for stack in stacks %}
-      <li>{{ stack.name }}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% block content %}
+<h1>Stacks and Users</h1>
+{% for stack in stacks %}
+<h3>{{ stack.stack }}</h3>
+<ul>
+  {% for user in stack.users %}
+  <li>{{ user.name }} {{ user.surname }}</li>
+  {% endfor %}
+</ul>
+<hr />
+{% endfor %} {% endblock %}
