@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Employee, Stack
 
-# Define mock_db data
 mock_db = [
     {'id': 1, 'name': 'John', 'surname': 'Doe', 'stack': 'Python', 'team_lead': 'David'},
     {'id': 2, 'name': 'Jane', 'surname': 'Smith', 'stack': 'Java', 'team_lead': 'Joana'},
