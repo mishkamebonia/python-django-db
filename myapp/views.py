@@ -31,23 +31,27 @@ def employees(request):
 
 
 def stacks(request):
-    stacks = [
-        {'name': 'Python'},
-        {'name': 'Java'},
-        {'name': 'JavaScript'},
-        {'name': 'C#'},
-        {'name': 'Ruby'},
-    ]
+    stacks_set = set()
+    stacks = []
+
+    for employee in mock_db:
+        if employee['stack'] not in stacks_set:
+            stacks_set.add(employee['stack'])
+            stacks.append({
+                'name': employee['stack']
+            })
+
     return render(request, 'stacks.html', {'stacks': stacks})
 
 def team_leads(request):
+    team_leads_set = set()
     team_leads = []
 
     for employee in mock_db:
-        if employee['team_lead'] == 'David' or employee['team_lead'] == 'Joana':
+        if employee['team_lead'] not in team_leads_set:
+            team_leads_set.add(employee['team_lead'])
             team_leads.append({
-                'name': employee['team_lead'],
-                'surname': employee['surname'],  
+                'name': employee['team_lead'], 
                 'stack': employee['stack']
             })
 
