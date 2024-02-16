@@ -1,0 +1,18 @@
+<!-- team_leads.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Team Leads</title>
+  </head>
+  <body>
+    <h1>Team Leads</h1>
+    <ul>
+      {% for team_lead in team_leads %}
+      <li>
+        {{ team_lead.name }} {{ team_lead.surname }} - {{ team_lead.stack }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
